@@ -1,0 +1,33 @@
+# Strings for MINIDSPSHD
+PLUGIN_MINIDSPSHD
+	EN	MiniDspShd
+
+PLUGIN_MINIDSPSHD_MODULE_NAME
+	EN	MiniDSP SHD
+
+PLUGIN_MINIDSPSHD_DESCRIPTION
+	EN	This plugin provides hardware volume control of the MiniDSP SHD from the Logitech Media Server.
+
+PLUGIN_MINIDSPSHD_BASIC_SETTINGS_HEADER
+	EN	Changes made here effect the functionality of the MiniDspShd plugin.
+
+PLUGIN_MINIDSPSHD_SAVE
+	EN	You must restart the server for these changes to take effect.
+	
+PLUGIN_MINIDSPSHD_ENABLED
+	EN	Enable
+
+PLUGIN_MINIDSPSHD_ENABLED_DESC
+	EN	Check the box to enable hardware volume control of the MiniDSP SHD associated with this player.
+
+PLUGIN_MINIDSPSHD_SHDADDRESS
+	EN	IP Address of MiniDSP SHD
+
+PLUGIN_MINIDSPSHD_SHDADDRESS_DESC
+	EN	Enter the IP Address of the Volumio web interface of the MiniDSP SHD associated with this player.
+
+PLUGIN_MINIDSPSHD_MAXVOL
+	EN	Maximum volume of MiniDSP SHD
+
+PLUGIN_MINIDSPSHD_MAXVOL_DESC
+	EN	Enter the maximum volume you want the plugin to adjust the MiniDSP SHD to when making volume adjustments (0 - 100).
