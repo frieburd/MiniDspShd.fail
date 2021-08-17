@@ -1,0 +1,25 @@
+[% PROCESS settings/header.html %]
+
+	<input type="hidden" name="playername" value="[% playername %]">
+	<input type="hidden" name="mode" value="">
+
+	[% WRAPPER settingSection %]
+
+		[% WRAPPER settingGroup title="PLUGIN_MINIDSPSHD_ENABLED" desc="PLUGIN_MINIDSPSHD_ENABLED_DESC" %] &nbsp;
+			<input name="pref_Enabled" type="checkbox" [% IF prefs.pref_Enabled %] checked ] [% END %] >
+		[% END %]
+
+		[% WRAPPER settingGroup title="PLUGIN_MINIDSPSHD_SHDADDRESS" desc="PLUGIN_MINIDSPSHD_SHDADDRESS_DESC" %]
+			<input type="text" class="stdedit" name="shdAddress" id="shdAddress" value="[% prefs.shdAddress %]" size="40" />
+		[% END %]
+
+		[% WRAPPER settingGroup title="PLUGIN_MINIDSPSHD_MAXVOL" desc="PLUGIN_MINIDSPSHD_MAXVOL_DESC" %]
+			<input type="text" class="stdedit" name="maxVol" id="maxVol" value="[% prefs.maxVol %]" size="5" />
+		[% END %]
+
+		[% WRAPPER settingGroup title="PLUGIN_MINIDSPSHD_SAVE" %] &nbsp;
+		[% END %]
+
+	[% END %]
+
+[% PROCESS settings/footer.html %]
