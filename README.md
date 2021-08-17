@@ -1,2 +1,2 @@
 # MiniDspShd
-A Logitech Media Server (LMS) plugin for controlling a MiniDSP SHD volume.
+A Logitech Media Server (LMS) plugin for controlling hardware volume on the MiniDSP SHD.
