@@ -1,0 +1,15 @@
+<extensions>
+  <details>
+    <title lang="EN">MiniDspShd Plugin</title>
+  </details>
+  <plugins>
+    <plugin name="MiniDspShd" version="{{ env['VERSION'] }}" minTarget="7.9" maxTarget="*">
+      <title lang="EN">MiniDspShd</title>
+      <desc lang="EN">Hardware volume control for MiniDSP SHD</desc>
+      <url>https://frieburd.github.io/MiniDspShd/{{ env['FOLDER'] }}/MiniDspShd-{{ env['VERSION'] }}.zip</url>
+      <link>https://github.com/frieburd/MiniDspShd</link>
+      <sha>{{ env['SHA'] }}</sha>
+      <creator>frieburd</creator>
+    </plugin>
+  </plugins>
+</extensions>

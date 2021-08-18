@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+
+<extension>
+	<name>PLUGIN_MINIDSPSHD</name>
+	<module>Plugins::MiniDspShd::Plugin</module>
+	<version>{{ env['VERSION'] }}</version>
+	<description>PLUGIN_MINIDSPSHD_DESC</description>
+	<icon>plugins/MiniDspShd/html/images/icon.png</icon>
+	<defaultState>enabled</defaultState>
+	<targetApplication>
+		<id>SlimServer</id>
+		<minVersion>7.9</minVersion>
+    <maxVersion>*</maxVersion>
+	</targetApplication>
+  	<optionsURL>plugins/MiniDspShd/settings/basic.html</optionsURL>
+  	<creator>frieburd</creator>
+</extension>
