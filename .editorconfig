@@ -1,0 +1,13 @@
+root = true
+
+[*.html]
+indent_style = tab
+indent_size = 4
+
+[*.p[lm]]
+indent_style = tab
+indent_size = 4
+
+[*.xml]
+indent_style = tab
+indent_size = 3
