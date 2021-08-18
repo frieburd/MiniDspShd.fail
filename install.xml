@@ -1,7 +1,7 @@
 <?xml version="1.0"?> 
  <extension>
   	<name>PLUGIN_MINIDSPSHD_MODULE_NAME</name> 
-  	<creator>frieburd1</creator> 
+  	<creator>frieburd</creator> 
   	<defaultState>enabled</defaultState> 
   	<description>PLUGIN_MINIDSPSHD_DESCRIPTION</description> 
   	<id>B87BAE55-1CAC-4235-A5DE-3F1CC0B634D1</id> 
