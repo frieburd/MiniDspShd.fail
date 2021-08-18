@@ -45,17 +45,17 @@ jobs:
 
       - name: Build package
         run: |
-          zip -r SqueezeCloud-${{ env.VERSION }}.zip . -x \*.zip \*.sh \*.git\* \*README\* \*webauth\* \*.sublime\* \*.DS_Store\* \*.editorconfig \*.template.xml
+          zip -r MiniDspShd-${{ env.VERSION }}.zip . -x \*.zip \*.sh \*.git\* \*README\* \*webauth\* \*.sublime\* \*.DS_Store\* \*.editorconfig \*.template.xml
       
       - name: Save artifact
         uses: actions/upload-artifact@v2
         with:
-          name: SqueezeCloud-${{ env.VERSION }}.zip
-          path: SqueezeCloud-${{ env.VERSION }}.zip
+          name: MiniDspShd-${{ env.VERSION }}.zip
+          path: MiniDspShd-${{ env.VERSION }}.zip
 
       - name: Calculate SHA
         run: |
-          echo "SHA=$(shasum SqueezeCloud-${{ env.VERSION }}.zip | awk '{print $1;}')" >> $GITHUB_ENV
+          echo "SHA=$(shasum MiniDspShd-${{ env.VERSION }}.zip | awk '{print $1;}')" >> $GITHUB_ENV
 
       - name: Create dev channel public XML file
         uses: cuchi/jinja2-action@v1.2.0
@@ -75,13 +75,13 @@ jobs:
       - name: Switch branch, setup git for push
         run: |
           mv public*.xml /tmp
-          mv SqueezeCloud-${{ env.VERSION }}.zip /tmp
+          mv MiniDspShd-${{ env.VERSION }}.zip /tmp
           git checkout gh-pages
-          cp /tmp/SqueezeCloud-${{ env.VERSION }}.zip ${{ env.FOLDER }}/
+          cp /tmp/MiniDspShd-${{ env.VERSION }}.zip ${{ env.FOLDER }}/
           cp /tmp/public*.xml .
           git config --local user.email "actions@github.com"
           git config --local user.name "GitHub Actions"
-          git add ${{ env.FOLDER }}/SqueezeCloud-${{ env.VERSION }}.zip
+          git add ${{ env.FOLDER }}/MiniDspShd-${{ env.VERSION }}.zip
           git commit -m "Github Actions release ${{ env.VERSION }}" -a
 
       - name: Push changes to gh-pages
@@ -110,6 +110,6 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }} # This pulls from the CREATE RELEASE step above, referencing it's ID to get its outputs object, which include a `upload_url`. See this blog post for more info: https://jasonet.co/posts/new-features-of-github-actions/#passing-data-to-future-steps 
-          asset_path: SqueezeCloud-${{ env.VERSION }}.zip
-          asset_name: SqueezeCloud-${{ env.VERSION }}.zip
+          asset_path: MiniDspShd-${{ env.VERSION }}.zip
+          asset_name: MiniDspShd-${{ env.VERSION }}.zip
           asset_content_type: application/zip
