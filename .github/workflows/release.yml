@@ -59,11 +59,11 @@ jobs:
           mv public*.xml /tmp
           mv MiniDspShd-${{ env.VERSION }}.zip /tmp
           git checkout gh-pages
-          cp /tmp/MiniDspShd-${{ env.VERSION }}.zip ${{ env.FOLDER }}/
+          cp /tmp/MiniDspShd-${{ env.VERSION }}.zip .
           cp /tmp/public*.xml .
           git config --local user.email "actions@github.com"
           git config --local user.name "GitHub Actions"
-          git add ${{ env.FOLDER }}/MiniDspShd-${{ env.VERSION }}.zip
+          git add ./MiniDspShd-${{ env.VERSION }}.zip
           git commit -m "Github Actions release ${{ env.VERSION }}" -a
 
       - name: Push changes to gh-pages
