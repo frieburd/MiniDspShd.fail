@@ -39,13 +39,6 @@ jobs:
         run: |
           ! [[ ${{ env.VERSION }} =~ ^[0-9]+.[0-9]+$ ]] && echo "Release tag must be in the form of x.y." && exit 1 || echo "Release tag format is correct"
 
-      - name: Create install XML file
-        uses: cuchi/jinja2-action@v1.2.0
-        with:
-          template: install.template.xml
-          output_file: install.xml
-          strict: true
-
       - name: Build package
         run: |
           zip -r MiniDspShd-${{ env.VERSION }}.zip . -x \*.zip \*.sh \*.git\* \*README\* \*webauth\* \*.sublime\* \*.DS_Store\* \*.editorconfig \*.template.xml
