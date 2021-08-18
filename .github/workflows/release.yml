@@ -27,13 +27,6 @@ jobs:
           echo "RELEASE_CHANNEL=release" >> $GITHUB_ENV
           echo "FOLDER=." >> $GITHUB_ENV
 
-      - name: Set version number (development build)
-        if: "!contains(github.ref, 'refs/tags/')"
-        run: |
-          echo "VERSION=`git describe --tags --abbrev=0`.`git rev-list $(git describe --tags --abbrev=0)..HEAD --count`" >> $GITHUB_ENV
-          echo "RELEASE_CHANNEL=dev" >> $GITHUB_ENV
-          echo "FOLDER=dev-builds" >> $GITHUB_ENV
-
       - name: Test if release number matches x.y
         if: env.RELEASE_CHANNEL == 'release'
         run: |
@@ -52,13 +45,6 @@ jobs:
       - name: Calculate SHA
         run: |
           echo "SHA=$(shasum MiniDspShd-${{ env.VERSION }}.zip | awk '{print $1;}')" >> $GITHUB_ENV
-
-      - name: Create dev channel public XML file
-        uses: cuchi/jinja2-action@v1.2.0
-        with:
-          template: public.template.xml
-          output_file: public-dev.xml
-          strict: true
 
       - name: Create release public XML file
         if: env.RELEASE_CHANNEL == 'release'
